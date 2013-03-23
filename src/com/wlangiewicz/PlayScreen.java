@@ -73,7 +73,7 @@ public class PlayScreen implements Screen {
             thread.start();
         }
         switch (key.getKeyCode()){
-            case KeyEvent.VK_ESCAPE: return new LoseScreen();
+            case KeyEvent.VK_ESCAPE: return new LoseScreen(points.points - 1000);
             case KeyEvent.VK_ENTER: return new WinScreen(points.points-1);
             case KeyEvent.VK_LEFT:
             case KeyEvent.VK_H: points.points--; player.moveBy(-1, 0); break;

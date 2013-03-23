@@ -33,7 +33,7 @@ public class WinScreen implements Screen {
             e.printStackTrace();
         }
 
-        terminal.writeCenter("You won. Score: " + score, 18);
+        terminal.writeCenter("You won !!!!! :). Score: " + score, 18);
         terminal.writeCenter("-- press [enter] to restart --", 22);
     }
 

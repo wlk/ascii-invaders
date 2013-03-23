@@ -4,9 +4,14 @@ import java.awt.event.KeyEvent;
 import asciiPanel.AsciiPanel;
 
 public class LoseScreen implements Screen {
+    int score = 0;
+    public LoseScreen(int pts)
+    {
+        score = pts;
+    }
 
     public void displayOutput(AsciiPanel terminal) {
-        terminal.writeCenter("You lost :( ", 10);
+        terminal.writeCenter("You lost :( only " + score + " points", 10);
         terminal.writeCenter("-- press [enter] to restart --", 22);
     }
 

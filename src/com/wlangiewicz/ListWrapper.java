@@ -98,7 +98,7 @@ public class ListWrapper {
                 //System.out.println("Alien collision");
                 if (c instanceof Player) {
                     //System.out.println("Alien collision with player");
-                    return new LoseScreen();
+                    return new LoseScreen(points.points - 1000);
                 } else if (c instanceof Rocket) {
                     //System.out.println("Alien collision with rocket");
                     aliensToRemove.add(a);
@@ -119,7 +119,7 @@ public class ListWrapper {
             if (c != null) {    // collision
                 if (c instanceof Player) {
                     //System.out.println("Alien collision with player");
-                    return new LoseScreen();
+                    return new LoseScreen(points.points - 1000);
                 } else if (c instanceof Rocket) {
                     alienRocketsToRemove.add(ar);
                     rocketsToRemove2.add((Rocket)c);
