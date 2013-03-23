@@ -14,8 +14,20 @@ public class Creature {
     private Color color;
     public Color color() { return color; }
 
+    public Creature colision(){
+        for (Creature c : world.creatures){
+            if (c.x == x && c.y == y && c != this)
+                return c;
+        }
+        return null;
+    }
+
     protected CreatureAi ai;
     public void setCreatureAi(CreatureAi ai) { this.ai = ai; }
+
+    public void setGlyph(char c){
+        glyph = c;
+    }
 
     public Creature(World world, char glyph, Color color){
         this.world = world;

@@ -27,11 +27,28 @@ public class CreatureFactory {
     }
 
     public Rocket newRocket(Player p){
-        Rocket rocket = new Rocket(world, '|', AsciiPanel.brightBlue);
+        Rocket rocket = new Rocket(world, '|', AsciiPanel.brightRed);
         new PlayerAi(rocket);
         //System.out.println("adding new rocket");
         world.addCreature(rocket);
         rocket.setPosition(p);
         return rocket;
+    }
+
+    public static AlienRocket newAlienRocket(Alien a, World w){
+        AlienRocket ar = new AlienRocket(w, '|', AsciiPanel.brightCyan);
+        new PlayerAi(ar);
+        w.addCreature(ar);
+        ar.setPosition(a);
+        return ar;
+    }
+
+    public static DeadAlien newDeadAlien(Alien a, World w)
+    {
+        DeadAlien da = new DeadAlien(a);
+        new PlayerAi(da);
+        w.addCreature(da);
+        da.timestamp = System.currentTimeMillis();
+        return da;
     }
 }

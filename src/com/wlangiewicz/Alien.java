@@ -10,13 +10,7 @@ public class Alien extends Creature {
         super(world, glyph, color);
     }
 
-     public Creature colision(){
-        for (Creature c : world.creatures){
-            if (c.x == x && c.y == y && c != this)
-                return c;
-        }
-        return null;
-    }
+
 
     public void setPosition()
     {
@@ -57,14 +51,16 @@ public class Alien extends Creature {
                     }
                 }
             }
+
+
         }
     }
 
     public void moveBy(int mx, int my){
-        if(! (world.creature(x+mx, y+my) instanceof Alien )){
+        if(! (world.creature(x+mx, y+my) instanceof Alien ) && !(world.creature(x+mx, y+my) instanceof DeadAlien )){
             if(x+mx < world.width() && y+my < world.height()+1 && y+my >= 0 && x+mx >= 0)
             {
-                ai.onEnter(x+mx, y+my, world.tile(x+mx, y+my));
+                ai.onEnter(x + mx, y + my, world.tile(x + mx, y + my));
             }
         }
 

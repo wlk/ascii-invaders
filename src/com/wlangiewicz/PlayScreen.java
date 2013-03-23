@@ -15,7 +15,7 @@ public class PlayScreen implements Screen {
     private Points points = new Points();
     private static Thread thread = null;
 
-    public static final int NUM_ALIENS = 150;
+    public static final int NUM_ALIENS = 50;
 
     public PlayScreen(){
         if(thread != null){
@@ -76,9 +76,9 @@ public class PlayScreen implements Screen {
             case KeyEvent.VK_ESCAPE: return new LoseScreen();
             case KeyEvent.VK_ENTER: return new WinScreen(points.points-1);
             case KeyEvent.VK_LEFT:
-            case KeyEvent.VK_H: player.moveBy(-1, 0); break;
+            case KeyEvent.VK_H: points.points--; player.moveBy(-1, 0); break;
             case KeyEvent.VK_RIGHT:
-            case KeyEvent.VK_L: player.moveBy( 1, 0); break;
+            case KeyEvent.VK_L: points.points--; player.moveBy( 1, 0); break;
             case KeyEvent.VK_SPACE: addRocket(); break;
         }
         return this;
@@ -90,4 +90,6 @@ public class PlayScreen implements Screen {
         lists.addRocket(r);
         points.points--;
     }
+
+
 }
