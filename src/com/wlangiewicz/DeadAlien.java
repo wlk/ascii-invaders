@@ -23,7 +23,7 @@ public class DeadAlien extends Alien {
 
     public boolean timeToDie()
     {
-        return System.currentTimeMillis() - timestamp > 5000;
+        return System.currentTimeMillis() - timestamp > 1000;
     }
 
 

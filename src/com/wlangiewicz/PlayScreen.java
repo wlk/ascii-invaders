@@ -15,7 +15,7 @@ public class PlayScreen implements Screen {
     private Points points = new Points();
     private static Thread thread = null;
 
-    public static final int NUM_ALIENS = 50;
+    public static final int NUM_ALIENS = 40;
 
     public PlayScreen(){
         if(thread != null){
